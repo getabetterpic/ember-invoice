@@ -1,18 +1,19 @@
-<h1>Customer</h1>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title">
+      <h1>{{name}}</h1>
+    </div>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      {{#each model.attributes}}
+      <dt>{{this.key}}:</dt>
+      <dd>{{this.value}}</dd>
+      {{/each}}
+    </dl>
+  </div>
+</div>
 
-<table>
-  {{#each model.attributes}}
-  <tr>
-    <td>
-      <strong>{{this.key}}:</strong>
-    </td>
-    <td>
-      {{this.value}}
-    </td>
-  </tr>
-  {{/each}}
-</table>
-
-{{#link-to 'customer.edit' model}}Change{{/link-to}}
+{{#link-to 'customers.edit' model}}Change{{/link-to}}
 
 {{outlet}}
