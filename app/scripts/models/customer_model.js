@@ -10,7 +10,8 @@ EmberInvoice.Customer = DS.Model.extend({
   status: DS.attr('string'),
   email: DS.attr('string'),
   phone: DS.attr('string'),
-  companyId: DS.attr('number'),
+  //company: DS.belongsTo('company'),
+  invoices: DS.hasMany('invoices'),
   createdAt: DS.attr('date'),
   updatedAt: DS.attr('date')
 });
@@ -30,34 +31,28 @@ EmberInvoice.Customer.reopen({
 EmberInvoice.Customer.FIXTURES = [
   {
     id: 0,
-    name: 'foo',
-    address: 'foo',
-    city: 'foo',
-    region: 'foo',
-    postal_code: 'foo',
-    country: 'foo',
-    reference: 'foo',
-    status: 'foo',
-    email: 'foo',
-    phone: 'foo',
-    company_id: 'foo',
-    created_at: 'foo',
-    updated_at: 'foo'
+    name: 'Mr. Colton Kihn',
+    address: '884 Jenkins Trail',
+    city: 'Port Jolieport',
+    region: 'MD',
+    postal_code: '23275',
+    country: 'US',
+    reference: '',
+    status: 'Active',
+    email: 'orion@walsh.co.uk',
+    phone: '685-307-6793'
   },
   {
     id: 1,
-    name: 'foo',
-    address: 'foo',
-    city: 'foo',
-    region: 'foo',
-    postal_code: 'foo',
-    country: 'foo',
-    reference: 'foo',
-    status: 'foo',
-    email: 'foo',
-    phone: 'foo',
-    company_id: 'foo',
-    created_at: 'foo',
-    updated_at: 'foo'
+    name: 'Nedra Krajcik II',
+    address: '89474 Batz Tunnel',
+    city: 'East Lillianbury',
+    region: 'DC',
+    postal_code: '89912-4703',
+    country: 'US',
+    reference: '',
+    status: 'Active',
+    email: 'nolan.gleichner@maggio.name',
+    phone: '1-242-778-4556'
   }
 ];
