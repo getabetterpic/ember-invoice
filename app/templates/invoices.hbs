@@ -1,0 +1,9 @@
+<h1>Invoices</h1>
+
+<ul>
+ {{#each model}}
+ <li>{{#link-to 'invoice' this}}{{this.id}}{{/link-to}}</li>
+  {{/each}}
+</ul>
+
+{{outlet}}
