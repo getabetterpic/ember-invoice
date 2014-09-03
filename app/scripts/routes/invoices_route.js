@@ -1,6 +1,6 @@
 EmberInvoice.InvoicesRoute = Ember.Route.extend({
   model: function() {
-    return this.get('store').find('invoice');
+    return this.modelFor('customer').get('invoices')
   }
 });
 

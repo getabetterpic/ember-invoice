@@ -1,47 +1,20 @@
-<h3>{{name}}</h3>
-<table class="table">
-  <tbody>
-    <dl class="dl-horizontal">
+<h3>{{name}} <small>{{#link-to 'customer.edit' this}}Edit{{/link-to}}</small></h3>
+{{#if invoices}}
+  <table class="table table-hover">
+    <thead>
       <tr>
-        <td>Name:</td>
-        <td>{{name}}</td>
+        <td>Invoice Date</td>
+        <td>Invoice Amount</td>
       </tr>
-      <tr>
-        <td>Address:</td>
-        <td>{{address}}</td>
-      </tr>
-      <tr>
-        <td>City:</td>
-        <td>{{city}}</td>
-      </tr>
-      <tr>
-        <td>Region:</td>
-        <td>{{region}}</td>
-      </tr>
-      <tr>
-        <td>Postal Code:</td>
-        <td>{{postalCode}}</td>
-      </tr>
-      <tr>
-        <td>Reference:</td>
-        <td>{{reference}}</td>
-      </tr>
-      <tr>
-        <td>Status:</td>
-        <td>{{status}}</td>
-      </tr>
-      <tr>
-        <td>Email:</td>
-        <td>{{email}}</td>
-      </tr>
-      <tr>
-        <td>Phone:</td>
-        <td>{{phone}}</td>
-      </tr>
-      <tr>
-    </dl>
-  </tbody>
-</table>
-{{#link-to 'customers.edit' model}}Change{{/link-to}}
-
+    </thead>
+    <tbody>
+      {{#each invoice in controller.invoices}}
+      {{#link-to 'invoice' invoice tagName='tr'}}
+        <td>{{invoice.invoiceDate}}</td>
+        <td>{{invoice.invoiceAmount}}</td>
+      {{/link-to}}
+      {{/each}}
+    </tbody>
+  </table>
+{{/if}}
 {{outlet}}

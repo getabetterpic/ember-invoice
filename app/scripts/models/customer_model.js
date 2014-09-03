@@ -11,7 +11,7 @@ EmberInvoice.Customer = DS.Model.extend({
   email: DS.attr('string'),
   phone: DS.attr('string'),
   //company: DS.belongsTo('company'),
-  invoices: DS.hasMany('invoices'),
+  invoices: DS.hasMany('invoice', { async: true }),
   createdAt: DS.attr('date'),
   updatedAt: DS.attr('date')
 });
@@ -40,7 +40,8 @@ EmberInvoice.Customer.FIXTURES = [
     reference: '',
     status: 'Active',
     email: 'orion@walsh.co.uk',
-    phone: '685-307-6793'
+    phone: '685-307-6793',
+    invoices: [0]
   },
   {
     id: 1,
@@ -53,6 +54,7 @@ EmberInvoice.Customer.FIXTURES = [
     reference: '',
     status: 'Active',
     email: 'nolan.gleichner@maggio.name',
-    phone: '1-242-778-4556'
+    phone: '1-242-778-4556',
+    invoices: [1]
   }
 ];

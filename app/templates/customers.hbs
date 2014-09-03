@@ -1,11 +1,11 @@
 <div class="row">
   <div class="col-md-3">
     <h3>Customers</h3>
-    <ul class="list-group">
+    <div class="list-group">
      {{#each model}}
-     <li class="list-group-item">{{#link-to 'customer' this}}{{this.name}}{{/link-to}}</li>
+     {{#link-to 'customer' this class="list-group-item"}}{{this.name}}{{/link-to}}</li>
       {{/each}}
-    </ul>
+    </div>
   </div>
   <div class="col-md-9">
     {{outlet}}
