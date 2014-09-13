@@ -14,16 +14,18 @@
     <table class="table table-bordered panel-body">
       <thead>
         <tr>
+          <td>Description</td>
           <td class="text-right">Units</td>
           <td class="text-right">Unit Price</td>
           <td class="text-right">Line Total</td>
-          <td>Action</td>
+          <td></td>
         </tr>
       </thead>
       <tbody>
         {{#if invoiceLines}}
         {{#each invoiceLines}}
           <tr>
+            <td class="text-right">{{description}}</td>
             <td class="text-right">{{units}}</td>
             <td class="text-right">{{unitPrice}}</td>
             <td class="text-right">{{lineAmount}}</td>
@@ -31,6 +33,7 @@
           </tr>
         {{/each}}
         {{/if}}
+        {{line-new invoice=this}}
       </tbody>
     </table>
     <div class="panel-footer text-right">

@@ -1,15 +1,15 @@
 /*global Ember*/
 EmberInvoice.InvoiceLine = DS.Model.extend({
-    description: DS.attr('string'),
-    units: DS.attr('number'),
-    unitPrice: DS.attr('number'),
-    lineAmount: function() {
-      var units = this.get('units');
-      var unitPrice = this.get('unitPrice')
-      return units * unitPrice
-    }.property('units', 'unitPrice'),
-    status: DS.attr('string'),
-    invoice: DS.belongsTo('invoice')
+  description: DS.attr('string'),
+  units: DS.attr('number'),
+  unitPrice: DS.attr('number'),
+  lineAmount: function() {
+    var units = this.get('units');
+    var unitPrice = this.get('unitPrice');
+    return units * unitPrice
+  }.property('units', 'unitPrice'),
+  status: DS.attr('string'),
+  invoice: DS.belongsTo('invoice')
 });
 
 // probably should be mixed-in...
