@@ -1,20 +1,2 @@
 <h3>{{name}} <small>{{#link-to 'customer.edit' this}}Edit{{/link-to}}</small></h3>
-{{#if invoices}}
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <td>Invoice Date</td>
-        <td>Invoice Amount</td>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each invoice in controller.invoices}}
-      {{#link-to 'invoice' invoice tagName='tr'}}
-        <td>{{invoice.invoiceDate}}</td>
-        <td>{{invoice.invoiceAmount}}</td>
-      {{/link-to}}
-      {{/each}}
-    </tbody>
-  </table>
-{{/if}}
 {{outlet}}

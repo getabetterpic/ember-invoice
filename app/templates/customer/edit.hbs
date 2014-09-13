@@ -1,18 +1,47 @@
-<h1>Customer</h1>
+<form class="form-horizontal" role="form">
+  <div class="form-group">
+    <label for="inputName" class="col-md-2 control-label">Name</label>
+    <div class="col-md-5">{{input value=name class="form-control"}}</div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress" class="col-md-2 control-label">Address</label>
+    <div class="col-md-5">{{textarea value=address class="form-control"}}</div>
+  </div>
+  <div class="form-group">
+    <label for="inputCity" class="col-md-2 control-label">City</label>
+    <div class="col-md-5">{{input value=city class="form-control"}}</div>
+  </div>
+  <div class="form-group">
+    <label for="inputState" class="col-md-2 control-label">State</label>
+    <div class="col-md-5">{{input value=region class="form-control"}}</div>
+  </div>
+  <div class="form-group">
+    <label for="inputZipCode" class="col-md-2 control-label">Zip</label>
+    <div class="col-md-5">{{input value=postalCode class="form-control"}}</div>
+  </div>
+  <div class="form-group">
+    <label for="inputReference" class="col-md-2 control-label">Reference</label>
+    <div class="col-md-5">{{input value=reference class="form-control"}}</div>
+  </div>
+  <div class="form-group">
+    <label for="inputStatus" class="col-md-2 control-label">Status</label>
+    <div class="col-md-5">{{input value=status class="form-control"}}</div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail" class="col-md-2 control-label">Email</label>
+    <div class="col-md-5">{{input value=email class="form-control"}}</div>
+  </div>
+  <div class="form-group">
+    <label for="inputPhone" class="col-md-2 control-label">Phone</label>
+    <div class="col-md-5">{{input value=phone class="form-control"}}</div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-offset-2 col-md-5">
+      <button class="btn btn-primary" {{action 'save'}}>Update</button>
+      {{#link-to 'invoices' this tagName='button' class="btn btn-link"}}Cancel{{/link-to}}
+    </div>
+  </div>
 
-<table>
-  {{#each buffer}}
-  <tr>
-    <td>
-      <strong>{{key}}:</strong>
-    </td>
-    <td>
-      {{input value=value}}
-    </td>
-  </tr>
-  {{/each}}
-</table>
-
-<button {{action 'save'}}>Update</button>
+</form>
 
 {{outlet}}

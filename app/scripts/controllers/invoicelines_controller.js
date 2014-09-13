@@ -1,4 +1,4 @@
-EmberInvoice.InvoicelinesController = Ember.ObjectController.extend({
+EmberInvoice.InvoiceLinesController = Ember.ArrayController.extend({
   // Implement your controller here.
 });
 

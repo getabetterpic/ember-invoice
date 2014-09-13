@@ -9,9 +9,18 @@ EmberInvoice.Invoice = DS.Model.extend({
   createdAt: DS.attr('date'),
   updatedAt: DS.attr('date'),
   customer: DS.belongsTo('customer'),
-  invoiceLines: DS.hasMany('invoiceLine'),
-  invoiceAmount: DS.attr('number')
-  //invoiceAmount: function() {}.property('@invoiceLine')
+  invoiceLines: DS.hasMany('invoiceLine', { async: true }),
+  invoiceAmount: function() {
+    var lines = this.get('invoiceLines');
+    var sum = 0;
+    lines.forEach(function(line) {
+      amt = line.get('lineAmount');
+      if (typeof amt === 'number') {
+        sum += amt;
+      }
+    });
+    return numeral(sum).format('$0,0.00');
+  }.property('invoiceLines.@each.lineAmount')
 });
 
 // delete below here if you do not want fixtures
@@ -24,7 +33,7 @@ EmberInvoice.Invoice.FIXTURES = [
   status: 'foo',
   revision: 'foo',
   terms: 'foo',
-  invoiceAmount: 200.00
+  invoiceLines: [0]
   },
   
   {
@@ -35,6 +44,6 @@ EmberInvoice.Invoice.FIXTURES = [
   status: 'foo',
   revision: 'foo',
   terms: 'foo',
-  invoiceAmount: 100.00
+  invoiceLines: [1]
   }
 ];

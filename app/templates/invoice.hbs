@@ -1,18 +1,40 @@
-<h1>Invoice</h1>
-
-<table>
-  {{#each model.attributes}}
-  <tr>
-    <td>
-      <strong>{{this.key}}:</strong>
-    </td>
-    <td>
-      {{this.value}}
-    </td>
-  </tr>
-  {{/each}}
-</table>
-
-{{#link-to 'invoice.edit' model}}Change{{/link-to}}
-
-{{outlet}}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title">Invoice #{{id}} <small>{{#link-to 'invoices'}}All Invoices{{/link-to}}</small></div>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Invoice Date</dt>
+      <dd>{{invoiceDate}}</dd>
+      <dt>Description</dt>
+      <dd>{{description}}</dd>
+      <dt>Terms</dt>
+      <dd>{{terms}}</dd>
+  </div>
+    <table class="table table-bordered panel-body">
+      <thead>
+        <tr>
+          <td class="text-right">Units</td>
+          <td class="text-right">Unit Price</td>
+          <td class="text-right">Line Total</td>
+          <td>Action</td>
+        </tr>
+      </thead>
+      <tbody>
+        {{#if invoiceLines}}
+        {{#each invoiceLines}}
+          <tr>
+            <td class="text-right">{{units}}</td>
+            <td class="text-right">{{unitPrice}}</td>
+            <td class="text-right">{{lineAmount}}</td>
+            <td></td>
+          </tr>
+        {{/each}}
+        {{/if}}
+      </tbody>
+    </table>
+    <div class="panel-footer text-right">
+      Total: {{invoiceAmount}}
+    </div>
+  </div>
+</div>
