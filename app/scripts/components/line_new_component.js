@@ -1,9 +1,6 @@
-EmberInvoice.LineFormComponent = Ember.Component.extend({
-  model: function() {
-    this.modelFor('invoice').get('lines');
-  },
+EmberInvoice.LineNewComponent = Ember.Component.extend({
   actions: {
-    saveLine: function(invoice) {
+    createLine: function(invoice) {
       var units = this.get('units');
       var unitPrice = this.get('unitPrice');
       var description = this.get('description');
@@ -22,6 +19,7 @@ EmberInvoice.LineFormComponent = Ember.Component.extend({
       this.set('units', '');
       this.set('unitPrice', '');
       this.set('lineAmount', '');
+
     }
   },
   lineAmount: function() {

@@ -3,11 +3,13 @@
 (function () {
     'use strict';
 
-    describe('Give it some context', function () {
-        describe('maybe a bit more context here', function () {
-            it('should run here few assertions', function () {
-
-            });
-        });
+    describe('EmberInvoice.InvoiceModel', function () {
+      it('should properly calculate invoiceAmount', function () {
+        var invoice;
+        Ember.run(function() {
+          invoice = EmberInvoice.Invoice.find(0);
+        })
+        expect(invoice.get('invoiceAmount')).to.equal(70);
+      });
     });
 })();

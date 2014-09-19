@@ -1,0 +1,32 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title">New Invoice <small>{{#link-to 'invoices'}}All Invoices{{/link-to}}</small></div>
+  </div>
+  <div class="panel-body">
+    <form class="form-horizontal" role="form">
+      <div class="form-group">
+        <label for="invoiceDate" class="col-sm-2 control-label">Invoice Date</label>
+        <div class="col-sm-6">
+          {{input value=invoiceDate class="form-control" id="invoiceDate"}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="description" class="col-sm-2 control-label">Description</label>
+        <div class="col-sm-6">
+          {{input value=description class="form-control" id="description"}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="terms" class="col-sm-2 control-label">Terms</label>
+        <div class="col-sm-6">
+          {{input value=terms class="form-control" id="terms"}}
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-6">
+          <button type="submit" {{action "createInvoice" this}} class="btn btn-primary btn-block">Create</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

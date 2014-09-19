@@ -1,18 +1,21 @@
-{{#if this}}
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <td>Invoice Date</td>
-        <td>Invoice Amount</td>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each invoice in controller}}
-      {{#link-to 'invoice' invoice tagName='tr'}}
-        <td>{{invoice.invoiceDate}}</td>
-        <td>{{invoice.invoiceAmount}}</td>
-      {{/link-to}}
-      {{/each}}
-    </tbody>
-  </table>
-{{/if}}
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <td class="col-sm-1">Id</td>
+      <td>Invoice Date</td>
+      <td>Invoice Amount</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="3">{{#link-to 'invoices.new'}}<span class="glyphicon glyphicon-plus"></span> New Invoice{{/link-to}}</td>
+    </tr>
+    {{#each invoice in controller}}
+    {{#link-to 'invoice' invoice tagName='tr'}}
+      <td>{{invoice.id}}</td>
+      <td>{{#link-to 'invoice' invoice}}{{invoice.invoiceDate}}{{/link-to}}</td>
+      <td>{{invoice.invoiceAmount}}</td>
+    {{/link-to}}
+    {{/each}}
+  </tbody>
+</table>

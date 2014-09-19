@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-md-3">
-    <h3>Customers</h3>
+    <h3>Customers <small>{{#link-to 'customers.new'}}New{{/link-to}}</small></h3>
     <div class="list-group">
      {{#each model}}
-     {{#link-to 'invoices' this class="list-group-item"}}{{this.name}}{{/link-to}}
+     {{#link-to 'invoices' this class="list-group-item"}}{{name}}<span class="badge pull-right">{{invoiceCount}}</span>{{/link-to}}
       {{/each}}
     </div>
   </div>

@@ -9,3 +9,4 @@ require('scripts/components/*');
 require('scripts/views/*');
 require('scripts/router');
 require('numeral');
+require('scripts/helpers/*');

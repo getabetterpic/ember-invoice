@@ -1,6 +1,5 @@
-<h3>{{name}} 
-  {{#unless this.isNewRecord}}
+<h3>{{name}}
+  {{#unless isNew}}
     <small>{{#link-to 'customer.edit' this}}Edit{{/link-to}}</small>
   {{/unless}}
 </h3>
-{{outlet}}

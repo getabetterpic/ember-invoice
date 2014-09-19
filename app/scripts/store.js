@@ -1,1 +1,5 @@
-EmberInvoice.ApplicationAdapter = DS.FixtureAdapter;
+EmberInvoice.ApplicationAdapter = DS.ActiveModelAdapter;
+
+DS.ActiveModelAdapter.reopen({
+  host: 'http://localhost:3000'
+});

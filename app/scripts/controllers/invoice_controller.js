@@ -1,4 +1,11 @@
 EmberInvoice.InvoiceController = Ember.ObjectController.extend({
-  // Implement your controller here.
+  actions: {
+    saveLine: function(line) {
+      line.save();
+    },
+    saveInvoice: function(invoice) {
+      invoice.save();
+    }
+  }
 });
 

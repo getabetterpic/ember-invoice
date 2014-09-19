@@ -6,7 +6,7 @@ EmberInvoice.InvoiceLine = DS.Model.extend({
   lineAmount: function() {
     var units = this.get('units');
     var unitPrice = this.get('unitPrice');
-    return units * unitPrice
+    return Math.round(units * unitPrice * 100) / 100;
   }.property('units', 'unitPrice'),
   status: DS.attr('string'),
   invoice: DS.belongsTo('invoice')
@@ -33,7 +33,6 @@ EmberInvoice.InvoiceLine.FIXTURES = [
     status: 'foo',
     invoiceId: 0
   },
-  
   {
     id: 1,
     description: 'foo',
@@ -41,6 +40,14 @@ EmberInvoice.InvoiceLine.FIXTURES = [
     unitPrice: 100.0,
     status: 'foo',
     invoiceId: 1
+  },
+  {
+    id: 2,
+    description: 'foo',
+    units: 2,
+    unitPrice: 100.0,
+    status: 'foo',
+    invoiceId: 0
   }
   
 ];

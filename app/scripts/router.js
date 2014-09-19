@@ -1,9 +1,11 @@
 EmberInvoice.Router.map(function () {
   this.resource('customers', function(){
+    this.route('new');
     this.resource('customer', { path: '/:customer_id' }, function() {
       this.route('edit', { path: '/edit' });
       this.resource('invoices', { path: '/invoices' }, function() {
         this.resource('invoice', { path: '/:invoice_id' });
+        this.route('new', { path: '/new' });
       });
     });
     this.route('edit', { path: '/:customer_id/edit' });
