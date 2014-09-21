@@ -1,11 +1,13 @@
 <div class="row">
   <div class="col-md-3">
     <h3>Customers <small>{{#link-to 'customers.new'}}New{{/link-to}}</small></h3>
-    <div class="list-group">
-     {{#each model}}
-     {{#link-to 'invoices' this class="list-group-item"}}{{name}}<span class="badge pull-right">{{invoiceCount}}</span>{{/link-to}}
+    <ul class="nav nav-pills nav-stacked">
+      {{#each model}}
+        {{#link-to 'invoices' this tagName="li"}}
+          <a>{{name}}<span class="badge pull-right">{{invoiceCount}}</span></a>
+        {{/link-to}}
       {{/each}}
-    </div>
+    </ul>
   </div>
   <div class="col-md-9">
     {{outlet}}

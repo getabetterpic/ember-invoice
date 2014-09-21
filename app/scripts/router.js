@@ -16,5 +16,4 @@ EmberInvoice.Router.map(function () {
     this.route('edit', { path: '/:invoice_line_id/edit' });
     this.route('create');
   });
-  
 });

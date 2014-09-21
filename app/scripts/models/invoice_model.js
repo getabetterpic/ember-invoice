@@ -7,6 +7,7 @@ EmberInvoice.Invoice = DS.Model.extend({
   terms: DS.attr('string'),
   customer: DS.belongsTo('customer'),
   invoiceLines: DS.hasMany('invoiceLine', { async: false }),
+  notes: DS.attr('string'),
   invoiceAmount: function() {
     var lines = this.get('invoiceLines');
     var sum = 0;

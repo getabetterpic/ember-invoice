@@ -23,6 +23,17 @@ EmberInvoice.CustomersNewController = Ember.ObjectController.extend({
         'phone': phone
       });
       customer.save().then(function(customer) {
+        self.setProperties({
+          'name': '',
+          'address': '',
+          'city': '',
+          'region': '',
+          'postalCode': '',
+          'country': '',
+          'reference': '',
+          'email': '',
+          'phone': ''
+        });
         self.transitionToRoute('invoices.new', customer);
       }, function(error) {
         console.log(error);
