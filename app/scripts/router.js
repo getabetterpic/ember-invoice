@@ -3,8 +3,10 @@ EmberInvoice.Router.map(function () {
     this.route('new');
     this.resource('customer', { path: '/:customer_id' }, function() {
       this.route('edit', { path: '/edit' });
+      this.route('erase');
       this.resource('invoices', { path: '/invoices' }, function() {
         this.resource('invoice', { path: '/:invoice_id' });
+          this.route('print');
         this.route('new', { path: '/new' });
       });
     });

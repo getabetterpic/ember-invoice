@@ -11,13 +11,7 @@ EmberInvoice.Customer = DS.Model.extend({
   email: DS.attr('string'),
   phone: DS.attr('string'),
   //company: DS.belongsTo('company'),
-  invoices: DS.hasMany('invoice', { async: true }),
-  invoiceCount: function() {
-    return this.get('invoices.length');
-  }.property('invoices.@each'),
-  isNew: function() {
-    return this.get('isNew');
-  }
+  invoices: DS.hasMany('invoice', { async: true })
 });
 
 // probably should be mixed-in...

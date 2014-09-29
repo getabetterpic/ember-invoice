@@ -1,6 +1,7 @@
 <h3>{{name}} 
-  {{#unless this.isNewRecord}}
-    <small>{{#link-to 'customer.edit' this}}Edit{{/link-to}}</small>
+  {{#unless this.isNew}}
+    <small>{{#link-to 'customer.edit' this tagName="button" class="btn btn-link"}}Edit{{/link-to}}</small>
+    <small><button {{action 'erase'}} class="btn btn-link">Erase</button></small>
   {{/unless}}
 </h3>
 {{outlet}}

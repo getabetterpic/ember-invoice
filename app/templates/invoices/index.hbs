@@ -4,17 +4,19 @@
       <td class="col-sm-1">Id</td>
       <td>Invoice Date</td>
       <td>Invoice Amount</td>
+      <td>Status</td>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td colspan="3">{{#link-to 'invoices.new'}}<span class="glyphicon glyphicon-plus"></span> New Invoice{{/link-to}}</td>
+      <td colspan="4">{{#link-to 'invoices.new'}}<span class="glyphicon glyphicon-plus"></span> New Invoice{{/link-to}}</td>
     </tr>
     {{#each invoice in controller}}
     {{#link-to 'invoice' invoice tagName='tr'}}
       <td>{{invoice.id}}</td>
       <td>{{#link-to 'invoice' invoice}}{{invoice.invoiceDate}}{{/link-to}}</td>
       <td>{{invoice.invoiceAmount}}</td>
+      <td>{{invoice.status}}</td>
     {{/link-to}}
     {{/each}}
   </tbody>

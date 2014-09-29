@@ -4,7 +4,7 @@
     <ul class="nav nav-pills nav-stacked">
       {{#each model}}
         {{#link-to 'invoices' this tagName="li"}}
-          <a>{{name}}<span class="badge pull-right">{{invoiceCount}}</span></a>
+          <a>{{name}}</a>
         {{/link-to}}
       {{/each}}
     </ul>
