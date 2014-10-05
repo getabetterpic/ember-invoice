@@ -1,0 +1,23 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <td class="col-sm-1">Id</td>
+      <td>Payment Date</td>
+      <td>Payment Amount</td>
+      <td>Status</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="4">{{#link-to 'payments.new'}}<span class="glyphicon glyphicon-plus"></span> New Payment{{/link-to}}</td>
+    </tr>
+    {{#each payment in controller}}
+    {{#link-to 'payment' payment tagName='tr'}}
+      <td>{{payment.id}}</td>
+      <td>{{#link-to 'payment' payment}}{{payment.paymentDate}}{{/link-to}}</td>
+      <td>{{payment.amount}}</td>
+      <td>{{payment.status}}</td>
+    {{/link-to}}
+    {{/each}}
+  </tbody>
+</table>

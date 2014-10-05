@@ -4,4 +4,8 @@
     <small><button {{action 'erase'}} class="btn btn-link">Erase</button></small>
   {{/unless}}
 </h3>
+<ul class="nav nav-tabs" role="tablist">
+  {{#link-to 'invoices' this tagName="li"}}{{#link-to 'invoices' this}}Invoices{{/link-to}}{{/link-to}}
+  {{#link-to 'payments' this tagName="li"}}{{#link-to 'payments' this}}Payments{{/link-to}}{{/link-to}}
+</ul>
 {{outlet}}
